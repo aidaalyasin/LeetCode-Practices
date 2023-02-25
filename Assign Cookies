@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} g
+ * @param {number[]} s
+ * @return {number}
+ */
+var findContentChildren = function(g, s) {
+    let solution = 0; //how many people are fed
+    let greedIndex = 0; //tries to feed greed of each child
+    g.sort((a,b) => a-b) //increasing order
+    s.sort((a,b) => a-b) 
+
+    for(let cookieSize of s){
+        if(cookieSize >= g[greedIndex]){
+            solution++;
+            greedIndex++
+        }
+    }
+    return solution
+};
