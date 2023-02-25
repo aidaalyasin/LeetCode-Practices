@@ -1,0 +1,15 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function(nums, target) {
+    //If the index of the target number exists, then the index will be returned
+    if(nums.indexOf(target) != -1) return nums.indexOf(target) 
+    //If the target number is not a part of the array, code below adds new elements to array
+    nums.push(target);
+    //Sorts new elements in the array to be in numerical order (lowest to highest)
+    nums.sort((a,b) => a-b);
+    //The index of the new element added to the array, which is the target, is returned
+    return nums.indexOf(target);
+};
